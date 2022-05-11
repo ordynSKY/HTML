@@ -11,4 +11,6 @@ goBtn.addEventListener("click", () => {
   setTimeout(() => {
     location = "https://google.com/";
   }, 6000);
+
+  goBtn.setAttribute("disabled", true);
 });
