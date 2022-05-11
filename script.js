@@ -3,10 +3,13 @@ const redirectionText = document.querySelector(".redirection");
 
 goBtn.addEventListener("click", () => {
   let secsToEnd = 6;
-
-  setInterval(() => {
+  const timerId = setInterval(() => {
     redirectionText.textContent = `Вы будете перенаправлены через ${--secsToEnd}...`;
   }, 1000);
+
+  setTimeout(() => {
+    clearInterval(timerId);
+  }, 5000);
 
   setTimeout(() => {
     location = "https://google.com/";
