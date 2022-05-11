@@ -1,9 +1,12 @@
-const likeBtn = document.querySelector(".btn-primary");
-const likesQuantity = document.querySelector(".like");
+const goBtn = document.querySelector(".btn");
+const redirectionText = document.querySelector(".redirection");
 
-likeBtn.addEventListener("click", () => {
-  let likes = 0;
-  likes += 1;
-  const word = "лайк";
-  likesQuantity.innerHTML = `${likes} ${word}`;
+goBtn.addEventListener("click", () => {
+  let secs = 6;
+  const timer = setInterval(() => {
+    redirectionText.textContent = `Вы будете перенаправлены через ${--secs}...`;
+  }, 1000);
+  setTimeout(() => {
+    location = "https://google.com/";
+  }, 6000);
 });
